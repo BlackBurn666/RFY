@@ -1,0 +1,217 @@
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:
+    radial-gradient(circle at 30% 20%, #2a2a2a, #0a0a0a 60%),
+    repeating-linear-gradient(45deg,#111,#111 12px,#0d0d0d 12px,#0d0d0d 24px);
+  color:#e6e6e6;
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+}
+
+/* capas ambiente */
+.fog,.dust{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+}
+
+.fog{
+  opacity:.25;
+  background: radial-gradient(circle at 50% 120%, #ffffff22, transparent 60%);
+  animation:fogMove 14s linear infinite;
+}
+
+@keyframes fogMove{
+  50%{ transform:translateY(-30px); opacity:.4;}
+}
+
+.dust{
+  opacity:.2;
+  background:
+    radial-gradient(2px 2px at 10% 20%, #fff6, transparent),
+    radial-gradient(2px 2px at 70% 60%, #fff4, transparent);
+  animation:dustMove 22s linear infinite;
+}
+
+@keyframes dustMove{
+  to{ transform:translateY(-40px); }
+}
+
+/* luna */
+.moon{
+  position:fixed;
+  top:60px;
+  right:80px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background: radial-gradient(circle,#eee,#bbb 60%,#888);
+  box-shadow:0 0 40px #ffffff22;
+}
+
+/* telarañas */
+.web{
+  position:fixed;
+  width:160px;
+  opacity:.22;
+  pointer-events:none;
+  z-index:2;
+}
+
+.web.left{ top:0; left:0; }
+.web.right{ top:0; right:0; transform:scaleX(-1); }
+
+/* murciélagos */
+.bat{
+  position:fixed;
+  width:48px;
+  fill:#ddd;
+  opacity:.35;
+  pointer-events:none;
+  animation:batFly linear infinite;
+}
+
+.bat path{
+  animation:flap .6s infinite alternate;
+}
+
+@keyframes flap{
+  from{ transform:scaleY(1);}
+  to{ transform:scaleY(.7);}
+}
+
+.b1{ top:22%; left:-60px; animation-duration:22s;}
+.b2{ top:40%; left:-80px; animation-duration:26s;}
+
+@keyframes batFly{
+  to{ transform:translateX(120vw) translateY(-40px);}
+}
+
+/* sidebar */
+.sidebar{
+  position:fixed;
+  left:-240px;
+  top:0;
+  width:240px;
+  height:100%;
+  background:#111;
+  border-right:3px dashed #444;
+  padding-top:70px;
+  transform:skewY(-2deg);
+  transition:.3s;
+  z-index:1000;
+}
+
+.sidebar.active{ left:0; }
+
+.sidebar a{
+  display:block;
+  padding:16px 22px;
+  color:#ddd;
+  text-decoration:none;
+  border-bottom:1px solid #222;
+}
+
+.sidebar a:hover{
+  background:#1b1b1b;
+  padding-left:28px;
+}
+
+/* botón */
+.menu-btn{
+  position:fixed;
+  top:18px;
+  left:18px;
+  z-index:1100;
+  background:#000;
+  color:white;
+  border:2px solid #666;
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+/* contenido */
+.main{
+  padding:90px 40px;
+  position:relative;
+  z-index:5;
+}
+
+/* tarjetas */
+.card{
+  background:#141414;
+  border:2px solid #333;
+  border-radius:18px 4px 22px 6px;
+  padding:34px;
+  margin-bottom:34px;
+  box-shadow:0 10px 30px #000;
+  outline:1px dashed #444;
+}
+
+/* lápidas */
+.tomb{
+  background:#0f0f0f;
+  border:2px solid #444;
+  border-radius:40px 40px 10px 10px;
+  padding:26px;
+  margin-top:18px;
+  text-align:center;
+}
+
+/* velas */
+.candle-bar{
+  display:flex;
+  gap:18px;
+  margin-top:18px;
+}
+
+.candle{
+  width:14px;
+  height:30px;
+  background:#e6e6e6;
+  border-radius:3px;
+  position:relative;
+}
+
+.candle::after{
+  content:"";
+  position:absolute;
+  top:-12px;
+  left:3px;
+  width:8px;
+  height:12px;
+  background: radial-gradient(circle,#fff,#ffcc66 60%,transparent);
+  border-radius:50%;
+  animation:flicker .18s infinite alternate;
+}
+
+@keyframes flicker{
+  to{ transform:scale(1.15);}
+}
+
+/* reloj */
+.clock{
+  width:120px;
+  height:120px;
+  border:3px solid #555;
+  border-radius:50%;
+  position:relative;
+  margin:20px auto;
+}
+
+.hand{
+  position:absolute;
+  left:50%;
+  bottom:50%;
+  width:2px;
+  height:40px;
+  background:#ddd;
+  transform-origin:bottom;
+  animation:tick 60s linear infinite;
+}
+
+@keyframes tick{
+  to{ transform:rotate(360deg);}
+}
