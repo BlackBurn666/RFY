@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inicio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="burton.css">
+</head>
+
+<body>
+
+<!-- capas ambiente -->
+<div class="fog"></div>
+<div class="dust"></div>
+<div class="moon"></div>
+
+<img src="web.png" class="web left">
+<img src="web.png" class="web right">
+
+<!-- murciélagos -->
+<svg class="bat b1" viewBox="0 0 100 60">
+<path d="M10 40 Q20 10 35 30 Q50 5 65 30 Q80 10 90 40 L70 32 Q50 45 30 32 Z"/>
+</svg>
+
+<svg class="bat b2" viewBox="0 0 100 60">
+<path d="M10 40 Q20 10 35 30 Q50 5 65 30 Q80 10 90 40 L70 32 Q50 45 30 32 Z"/>
+</svg>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div id="sidebar" class="sidebar">
+<a href="burton-index.html">Inicio</a>
+<a href="burton-sobre.html">Sobre mí</a>
+<a href="burton-trabajo.html">Trabajo</a>
+<a href="burton-proyectos.html">Proyectos</a>
+<a href="burton-contacto.html">Contacto</a>
+</div>
+
+<div class="main">
+
+<!-- 🔽 CONTENIDO DE ESTA PÁGINA 🔽 -->
+
+<div class="card">
+<h1>Portfolio Técnico</h1>
+
+<p>
+Desarrollador enfocado en soluciones prácticas, automatización y desarrollo web.
+Experiencia construyendo sistemas funcionales, herramientas técnicas y proyectos
+propios con enfoque en rendimiento y estructura clara.
+</p>
+
+<p>
+Este portfolio muestra implementaciones reales, prototipos funcionales
+y ejemplos de arquitectura aplicada.
+</p>
+
+<div class="candle-bar">
+<div class="candle"></div>
+<div class="candle"></div>
+</div>
+
+</div>
+
+
+
+</div>
+
+<script>
+function toggleMenu(){
+ document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>

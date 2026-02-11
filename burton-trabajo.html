@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>TITULO</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="burton.css">
+</head>
+
+<body>
+
+<!-- capas ambiente -->
+<div class="fog"></div>
+<div class="dust"></div>
+<div class="moon"></div>
+
+<img src="web.png" class="web left">
+<img src="web.png" class="web right">
+
+<!-- murciélagos -->
+<svg class="bat b1" viewBox="0 0 100 60">
+<path d="M10 40 Q20 10 35 30 Q50 5 65 30 Q80 10 90 40 L70 32 Q50 45 30 32 Z"/>
+</svg>
+
+<svg class="bat b2" viewBox="0 0 100 60">
+<path d="M10 40 Q20 10 35 30 Q50 5 65 30 Q80 10 90 40 L70 32 Q50 45 30 32 Z"/>
+</svg>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<div id="sidebar" class="sidebar">
+<a href="burton-index.html">Inicio</a>
+<a href="burton-sobre.html">Sobre mí</a>
+<a href="burton-trabajo.html">Trabajo</a>
+<a href="burton-proyectos.html">Proyectos</a>
+<a href="burton-contacto.html">Contacto</a>
+</div>
+
+<div class="main">
+
+<!-- 🔽 CONTENIDO DE ESTA PÁGINA 🔽 -->
+
+<div class="card">
+<h1>Experiencia Técnica</h1>
+
+<div class="tomb">
+<h3>Desarrollo Web</h3>
+<p>
+Construcción de interfaces y páginas multipágina,
+estructura semántica HTML, estilos avanzados CSS
+y comportamiento interactivo con JavaScript.
+</p>
+</div>
+
+<div class="tomb">
+<h3>Automatización</h3>
+<p>
+Creación de scripts y herramientas para reducir
+tareas repetitivas y mejorar flujos de trabajo.
+</p>
+</div>
+
+<div class="tomb">
+<h3>Modificación de Sistemas</h3>
+<p>
+Edición y extensión de sistemas existentes,
+incluyendo contenido de videojuegos y herramientas técnicas.
+</p>
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+ document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
